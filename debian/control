@@ -1,0 +1,31 @@
+Source: modbus
+Section: libdevel
+Priority: extra
+Maintainer: mdavidsaver <mdavidsaver@gmail.com>
+Build-Depends: debhelper (>= 9), epics-debhelper (>= 8.14~),
+               epics-dev,
+               epics-asyn-dev,
+Standards-Version: 3.9.6
+Homepage: http://cars.uchicago.edu/software/epics/modbus.html
+Vcs-Git: https://github.com/epicsdeb/modbus.git
+Vcs-Browser: https://github.com/epicsdeb/modbus
+
+Package: epics-modbus-dev
+Architecture: any
+Depends: libmodbus2.8 (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends},
+         ${epics:Depends},
+Conflicts: epics-synapps,
+Description: EPICS driver for modbus devices
+ Communication with Modbus RTU, ASCII, and TCP devices (commonly PLCs).
+ .
+ This package contains headers and libraries needed at build time.
+
+Package: libmodbus2.8
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Conflicts: epics-synapps,
+Description: EPICS driver for modbus devices
+ Communication with Modbus RTU, ASCII, and TCP devices (commonly PLCs).
+ .
+ This package contains runtime libraries
